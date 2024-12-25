@@ -3,6 +3,8 @@ const App = () => {
     alert(`You have purchased a ${item}!`);
   };
 
+
+  
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
       <div>your best shopping hub with lowest price</div>
