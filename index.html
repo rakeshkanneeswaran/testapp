@@ -6,14 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
     <script>
-      !(function () {
-        window.setOptiCookieConsent = (consent) => {
-          posthog.set_config({
-            persistence: consent === "yes" ? "localStorage+cookie" : "memory",
-          });
-          localStorage.setItem("opti_consent", consent);
-        };
-      })();
+      window.setOptiCookieConsent = (consent) => {
+        localStorage.setItem("opti_consent", consent);
+      };
     </script>
     <script
       async
