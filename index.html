@@ -5,9 +5,24 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
-    <script type="text/javascript" src="https://cdn-stag.optimeleon.com/thi-kw2xz/def-kw2xz/main.js"></script>
-    <script> !(function () { window.setOptiCookieConsent("yes"); })(); </script>
-   
+    <script>
+      !(function () {
+        window.setOptiCookieConsent = (consent) => {
+          posthog.set_config({
+            persistence: consent === "yes" ? "localStorage+cookie" : "memory",
+          });
+          localStorage.setItem("opti_consent", consent);
+        };
+      })();
+    </script>
+    <script
+      async
+      type="text/javascript"
+      src="https://cdn-stag.optimeleon.com/rak-gn0bk/def-gn0bm/main.js"
+    ></script>
+    <script>
+      window.setOptiCookieConsent("yes");
+    </script>
   </head>
   <body>
     <div id="root"></div>
